@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./Layout";
+import Search from "./pages/Search";
+import Todo from "./pages/Todo";
+import Pagination from "./pages/Pagination";
+import Tabs from "./pages/Tabs";
+import StopWatch from "./pages/StopWatch";
+import Table from "./pages/Table";
+import Accordion from "./pages/Accordion";
+import InfiniteScroll from "./pages/InfiniteScroll";
+import Home from "./pages/Home";
+import Form from "./pages/Form";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      element: <Layout />,
+      children: [
+        { element: <Home />, path: "/" },
+        { element: <Search />, path: "/search" },
+        { element: <Todo />, path: "/todo" },
+        { element: <Pagination />, path: "/pagination" },
+        { element: <Tabs />, path: "/tabs" },
+        { element: <InfiniteScroll />, path: "/infiniteScroll" },
+        { element: <StopWatch />, path: "/stopwatch" },
+        { element: <Table />, path: "/table" },
+        { element: <Accordion />, path: "/accordion" },
+        { element: <StopWatch />, path: "/stopwatch" },
+        { element: <Form />, path: "/form" },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App;
