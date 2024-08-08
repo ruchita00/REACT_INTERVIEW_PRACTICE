@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import SearchInput from "../components/SearchInput";
 
 const Search = () => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const handleChange = (value) => {
-    setSearchValue(value);
+    setSearchInput(value);
   };
   return (
     <div>
-      <p>searching for:{searchValue}</p>
+      <p>searching for:{searchInput}</p>
       <SearchInput onChange={handleChange} />
     </div>
   );

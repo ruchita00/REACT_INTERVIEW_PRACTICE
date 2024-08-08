@@ -11,6 +11,7 @@ import Accordion from "./pages/Accordion";
 import InfiniteScroll from "./pages/InfiniteScroll";
 import Home from "./pages/Home";
 import Form from "./pages/Form";
+import Progress from "./pages/Progress";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,7 @@ function App() {
         { element: <Accordion />, path: "/accordion" },
         { element: <StopWatch />, path: "/stopwatch" },
         { element: <Form />, path: "/form" },
+        { element: <Progress />, path: "/progress" },
       ],
     },
   ]);
