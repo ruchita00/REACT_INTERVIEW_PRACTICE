@@ -1,0 +1,18 @@
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.products_item {
+  height: 250px;
+  padding: 20px;
+  background-color: rgb(220, 220, 220);
+  border-radius: 15px;
+}
+.products_item > img {
+  height: 95%;
+  width: 100%;
+  margin: 10px;
+  margin-bottom: 2px;
+}
