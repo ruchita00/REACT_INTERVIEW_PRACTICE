@@ -1,0 +1,34 @@
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.products_item {
+  height: 250px;
+  border-radius: 15px;
+  background-color: rgb(220, 220, 220);
+  padding: 20px;
+}
+.products_item > img {
+  height: 95%;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination_disabled {
+  opacity: 0;
+}
+
+.pagination_selected {
+  background-color: blue;
+}
+.pagination > span {
+  border: 1px solid black;
+  padding: 20px;
+}
