@@ -14,6 +14,7 @@ import Form from "./pages/Form";
 import Progress from "./pages/Progress";
 import EmojiSearch from "./pages/EmojiSearch";
 import TodoNew from "./pages/TodoNew";
+import StarRating from "./pages/StarRating";
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +35,7 @@ function App() {
         { element: <Progress />, path: "/progress" },
         { element: <EmojiSearch />, path: "/emoji" },
         { element: <TodoNew />, path: "/todonew" },
+        { element: <StarRating />, path: "/star" },
       ],
     },
   ]);

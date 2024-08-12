@@ -162,6 +162,18 @@ const Header = () => {
       >
         todonew{" "}
       </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/star"
+      >
+        Star rating{" "}
+      </NavLink>
     </div>
   );
 };
