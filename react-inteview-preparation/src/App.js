@@ -12,6 +12,8 @@ import InfiniteScroll from "./pages/InfiniteScroll";
 import Home from "./pages/Home";
 import Form from "./pages/Form";
 import Progress from "./pages/Progress";
+import EmojiSearch from "./pages/EmojiSearch";
+import TodoNew from "./pages/TodoNew";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +32,8 @@ function App() {
         { element: <StopWatch />, path: "/stopwatch" },
         { element: <Form />, path: "/form" },
         { element: <Progress />, path: "/progress" },
+        { element: <EmojiSearch />, path: "/emoji" },
+        { element: <TodoNew />, path: "/todonew" },
       ],
     },
   ]);

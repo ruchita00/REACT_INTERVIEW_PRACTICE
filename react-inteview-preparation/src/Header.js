@@ -138,6 +138,30 @@ const Header = () => {
       >
         Progress
       </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/emoji"
+      >
+        Emoji Search
+      </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/todonew"
+      >
+        todonew{" "}
+      </NavLink>
     </div>
   );
 };
