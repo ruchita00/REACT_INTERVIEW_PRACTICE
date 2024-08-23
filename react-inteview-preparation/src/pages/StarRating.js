@@ -7,41 +7,40 @@ const StarRating = ({ totalStars = 5 }) => {
   const handleClick = (value) => {
     setRating(value);
   };
-  const handleHoverEnter = (value) => {
+  const handleMouseEnter = (value) => {
     setHoverRating(value);
   };
-  const handleHoverLeave = () => {
+  const handleMouseLeave = () => {
     setHoverRating(0);
   };
   return (
     <div style={{ display: "flex" }}>
       {Array.from({ length: totalStars }, (_, index) => (
         <Star
-          key={index}
-          isFilled={index < (rating || hoverRating)}
+          isFilled={index < (hoverRating || rating)}
           onClick={() => handleClick(index + 1)}
-          onMouseEnter={() => handleHoverEnter(index + 1)}
-          onMouseLeave={handleHoverLeave}
+          onMouseEnter={() => handleMouseEnter(index + 1)}
+          onMouseLeave={handleMouseLeave}
         />
       ))}
     </div>
   );
 };
-
-const Star = ({ onClick, onMouseEnter, onMouseLeave, isFilled }) => {
-  <span
-    onClick={onClick}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-    style={{
-      cursor: "pointer",
-      color: isFilled ? "yellow" : "gray",
-      fontSize: "2rem",
-    }}
-  >
-    {" "}
-    ★
-  </span>;
+const Star = ({ onClick, isFilled, onMouseEnter, onMouseLeave }) => {
+  return (
+    <span
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      style={{
+        color: isFilled ? "yellow" : "gray",
+        fontSize: "2rem",
+        cursor: "pointer",
+      }}
+    >
+      ★
+    </span>
+  );
 };
 
 export default StarRating;
