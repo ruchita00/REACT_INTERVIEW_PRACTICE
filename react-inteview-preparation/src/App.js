@@ -39,11 +39,11 @@ function App() {
         { element: <Progress />, path: "/progress" },
         { element: <EmojiSearch />, path: "/emoji" },
         { element: <TodoNew />, path: "/todonew" },
-        { element: <StarRating />, path: "/star" },
+        { element: <StarRating totalStars={5} />, path: "/star" },
         { element: <Carousel />, path: "/carousel" },
         { element: <TodoList />, path: "/todolist" },
         { element: <PasswordInput />, path: "/password" },
-        { element: <Dummy />, path: "/dummy" },
+        { element: <Dummy totalStars={5} />, path: "/dummy" },
       ],
     },
   ]);
