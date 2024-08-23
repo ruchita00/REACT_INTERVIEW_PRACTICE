@@ -15,6 +15,10 @@ import Progress from "./pages/Progress";
 import EmojiSearch from "./pages/EmojiSearch";
 import TodoNew from "./pages/TodoNew";
 import StarRating from "./pages/StarRating";
+import Carousel from "./pages/Carousel";
+import TodoList from "./pages/TodoList";
+import PasswordInput from "./pages/PasswordInput";
+import Dummy from "./pages/Dummy";
 
 function App() {
   const router = createBrowserRouter([
@@ -36,6 +40,10 @@ function App() {
         { element: <EmojiSearch />, path: "/emoji" },
         { element: <TodoNew />, path: "/todonew" },
         { element: <StarRating />, path: "/star" },
+        { element: <Carousel />, path: "/carousel" },
+        { element: <TodoList />, path: "/todolist" },
+        { element: <PasswordInput />, path: "/password" },
+        { element: <Dummy />, path: "/dummy" },
       ],
     },
   ]);

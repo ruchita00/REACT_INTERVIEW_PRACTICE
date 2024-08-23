@@ -174,6 +174,54 @@ const Header = () => {
       >
         Star rating{" "}
       </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/carousel"
+      >
+        Carousel{" "}
+      </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/todolist"
+      >
+        TodoList{" "}
+      </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/password"
+      >
+        Password {" "}
+      </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/dummy"
+      >
+        Dummy{" "}
+      </NavLink>
     </div>
   );
 };
