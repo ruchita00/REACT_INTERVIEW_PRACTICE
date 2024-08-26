@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
 
-const Dummy = () => {
+const Memoization = () => {
   const [filter, setFilter] = useState("");
   const [items, setItems] = useState(["Banana", "apple", "organge", "mango"]);
   //usecllback to memoize the handlfilterchange function
@@ -32,4 +32,4 @@ const Dummy = () => {
   );
 };
 
-export default Dummy;
+export default Memoization;
