@@ -13,14 +13,13 @@ import Home from "./pages/Home";
 import Form from "./pages/Form";
 import Progress from "./pages/Progress";
 import EmojiSearch from "./pages/EmojiSearch";
-import TodoNew from "./pages/TodoNew";
 import StarRating from "./pages/StarRating";
-import Carousel from "./pages/Carousel";
 import TodoList from "./pages/TodoList";
 import PasswordInput from "./pages/PasswordInput";
 import Dummy from "./pages/Dummy";
 import Dropdown from "./pages/Dropdown";
 import Hoc from "./pages/Hoc";
+import ChildtoParent from "./pages/ChildtoParent";
 
 function App() {
   const router = createBrowserRouter([
@@ -40,14 +39,13 @@ function App() {
         { element: <Form />, path: "/form" },
         { element: <Progress />, path: "/progress" },
         { element: <EmojiSearch />, path: "/emoji" },
-        { element: <TodoNew />, path: "/todonew" },
         { element: <StarRating totalStars={5} />, path: "/star" },
-        { element: <Carousel />, path: "/carousel" },
         { element: <TodoList />, path: "/todolist" },
         { element: <PasswordInput />, path: "/password" },
         { element: <Dummy totalStars={5} />, path: "/dummy" },
         { element: <Dropdown />, path: "/dropdown" },
         { element: <Hoc />, path: "/hoc" },
+        { element: <ChildtoParent />, path: "/child" },
       ],
     },
   ]);

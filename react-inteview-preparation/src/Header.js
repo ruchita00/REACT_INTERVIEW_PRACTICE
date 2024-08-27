@@ -158,33 +158,9 @@ const Header = () => {
           fontWeight: 600,
           padding: "8px",
         }}
-        to="/todonew"
-      >
-        todonew{" "}
-      </NavLink>
-      <NavLink
-        style={{
-          textDecoration: "none",
-          color: "black",
-          fontSize: "18px",
-          fontWeight: 600,
-          padding: "8px",
-        }}
         to="/star"
       >
         Star rating{" "}
-      </NavLink>
-      <NavLink
-        style={{
-          textDecoration: "none",
-          color: "black",
-          fontSize: "18px",
-          fontWeight: 600,
-          padding: "8px",
-        }}
-        to="/carousel"
-      >
-        Carousel{" "}
       </NavLink>
       <NavLink
         style={{
@@ -245,6 +221,18 @@ const Header = () => {
         to="/hoc"
       >
         HOC{" "}
+      </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/child"
+      >
+        ChildtoParent{" "}
       </NavLink>
     </div>
   );
