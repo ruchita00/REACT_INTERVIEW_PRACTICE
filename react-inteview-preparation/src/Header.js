@@ -234,6 +234,18 @@ const Header = () => {
       >
         Dropdown{" "}
       </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/hoc"
+      >
+        HOC{" "}
+      </NavLink>
     </div>
   );
 };

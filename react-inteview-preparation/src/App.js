@@ -20,6 +20,7 @@ import TodoList from "./pages/TodoList";
 import PasswordInput from "./pages/PasswordInput";
 import Dummy from "./pages/Dummy";
 import Dropdown from "./pages/Dropdown";
+import Hoc from "./pages/Hoc";
 
 function App() {
   const router = createBrowserRouter([
@@ -46,6 +47,7 @@ function App() {
         { element: <PasswordInput />, path: "/password" },
         { element: <Dummy totalStars={5} />, path: "/dummy" },
         { element: <Dropdown />, path: "/dropdown" },
+        { element: <Hoc />, path: "/hoc" },
       ],
     },
   ]);

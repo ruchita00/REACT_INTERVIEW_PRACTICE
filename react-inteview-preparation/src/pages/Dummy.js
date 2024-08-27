@@ -1,35 +1,37 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useState } from "react";
 
 const Dummy = () => {
-  const [filter, setFilter] = useState("");
-  const [items, setItems] = useState(["Banana", "apple", "organge", "mango"]);
-  //usecllback to memoize the handlfilterchange function
-  const handleFilterChange = useCallback((e) => {
-    setFilter(e.target.value);
-  }, []);
-
-  //useMemo to memoize the filtered and sorted list
-  const filteredItems = useMemo(() => {
-    const filtered = items.filter((item) =>
-      item.toLowerCase().includes(filter.toLowerCase())
-    );
-    return filtered.sort(); //sort alphbetically
-  }, [filter, items]);
   return (
     <div>
-      <input
-        type="text"
-        value={filter}
-        onChange={handleFilterChange}
-        placeholder="filter itens"
-      />
-      <ul>
-        {filteredItems.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <HOCRED cmp={Counter} />
+      <HOCBLUE cmp={Counter} />
     </div>
   );
 };
+
+function HOCRED(props) {
+  return (
+    <h3 style={{ backgroundColor: "red", width: "100px" }}>
+      <props.cmp />
+    </h3>
+  );
+}
+function HOCBLUE(props) {
+  return (
+    <h3 style={{ backgroundColor: "blue", width: "100px" }}>
+      <props.cmp />
+    </h3>
+  );
+}
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count + 1)}>update</button>
+    </div>
+  );
+}
 
 export default Dummy;
