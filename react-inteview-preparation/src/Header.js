@@ -208,7 +208,7 @@ const Header = () => {
         }}
         to="/password"
       >
-        Password {" "}
+        Password{" "}
       </NavLink>
       <NavLink
         style={{
@@ -221,6 +221,18 @@ const Header = () => {
         to="/dummy"
       >
         Dummy{" "}
+      </NavLink>
+      <NavLink
+        style={{
+          textDecoration: "none",
+          color: "black",
+          fontSize: "18px",
+          fontWeight: 600,
+          padding: "8px",
+        }}
+        to="/dropdown"
+      >
+        Dropdown{" "}
       </NavLink>
     </div>
   );
