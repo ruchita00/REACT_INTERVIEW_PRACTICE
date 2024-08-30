@@ -1,117 +1,52 @@
-import { useState } from "react";
-import "../styles/Todolist.css";
+import React, { useState } from "react";
 
-const initialItems = [
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "React",
-  "Angular",
-  "Zustand",
-  "NextJS",
-  "TypeScript",
-].map((item) => ({
-  id: `${item}-${Date.now()}`,
-  text: item,
-  isEditing: false,
-}));
+const TodoList = () => {
+  const [allData, setAllData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [name, setName] = useState("");
 
-function TodoList() {
-  const [todoItems, setTodoItems] = useState(initialItems);
-  const [inputValue, setInputValue] = useState("");
-
-  // add an single item to the existing list with isEditing: false
-  const addTodoItem = (item) => {
-    setTodoItems((prevItems) => [
-      ...prevItems,
-      { id: `${item}-${Date.now()}`, text: item, isEditing: false },
-    ]);
-  };
-
-  // filter the list with the items whose index doesn't match with the id you want to delete
-  const handleDelete = (id) => {
-    setTodoItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
-
-  // Reusable function to update an item
-  // const updateTodoItem = (id, updateFunction) => {
-  //   setTodoItems((prevItems) =>
-  //     prevItems.map((item) => (item.id === id ? updateFunction(item) : item))
-  //   );
-  // };
-
-  // Handle toggling the edit state
   const handleEdit = (id) => {
-    // updateTodoItem(id, (item) => ({ ...item, isEditing: !item.isEditing }));
-    setTodoItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, isEditing: !item.isEditing } : item
-      )
-    );
+    const newList = allData.find((item) => item.id === id);
+    setCurrentIndex(id);
+    setName(newList.value);
   };
-
-  // Handle changing the text of an item
-  const handleEditChange = (e, id) => {
-    const newValue = e.target.value;
-    // updateTodoItem(id, (item) => ({ ...item, text: newValue }));
-    setTodoItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, text: newValue } : item
-      )
-    );
+  const handleDelete = (id) => {
+    const newList = allData.find((item) => item.id !== id);
+    setAllData(newList);
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (inputValue) {
-      //once the value is true and clicked on enter, it will be invoking/calling the addTodoItem function with that value
-      addTodoItem(inputValue);
-      setInputValue("");
+  const handleSubmit = () => {
+    if (currentIndex) {
+      const newList = allData.map((item) =>
+        item.id === currentIndex ? { ...item, value: name } : item
+      );
+      setAllData(newList);
+      setName("");
+      setCurrentIndex(null);
+    } else {
+      setAllData((prev) => [...prev, { id: allData.length - 1, value: name }]);
+      setName("");
     }
   };
-
   return (
-    <div className="container text-center">
-      <form id="todoForm" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="todoItemInput"
-          autoComplete="off"
-          placeholder="Add a new item"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </form>
-
-      <ul id="listContainer" className="list-container">
-        {todoItems.map((item) => (
-          <li key={item.id}>
-            {/* handleEdit function is responsible for isEditing toggle*/}
-            {item.isEditing ? (
-              <input
-                type="text"
-                value={item.text}
-                onChange={(e) => handleEditChange(e, item.id)}
-              />
-            ) : (
-              // for other non edited todos, it is normal text
-              <span className="text">{item.text}</span>
-            )}
-            <button className="edit" onClick={() => handleEdit(item.id)}>
-              {item.isEditing ? "💾" : "✏️"}
-            </button>
-            <button className="delete" onClick={() => handleDelete(item.id)}>
-              🗑️
-            </button>
-          </li>
+    <div>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="user name"
+      />
+      <button onClick={handleSubmit}>{currentIndex ? "update" : "all"}</button>
+      <div>
+        {allData.map((item) => (
+          <div key={item.id}>
+            <h5>{item.value}</h5>
+            <h5 onClick={() => handleEdit(item.id)}>edit</h5>
+            <h5 onClick={() => handleDelete(item.id)}>delete</h5>
+          </div>
         ))}
-      </ul>
-
-      {todoItems.length === 0 && (
-        <div className="no-elements">Ooops! List is empty</div>
-      )}
+      </div>
     </div>
   );
-}
+};
 
 export default TodoList;

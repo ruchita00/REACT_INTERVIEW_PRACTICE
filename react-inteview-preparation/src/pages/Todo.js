@@ -33,7 +33,7 @@ const Todo = () => {
         return (
           <>
             <li>{item}</li>
-            <button onClick={() => handleEdit(index)}>edit</button>
+            <button onClick={() => handleDelete(index)}>delete</button>
             <button
               onClick={() => handleEdit(index, prompt("edit tasks", tasks))}
             >

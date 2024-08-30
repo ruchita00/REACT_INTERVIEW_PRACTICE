@@ -10,7 +10,7 @@ const Pagination = () => {
     try {
       const res = await fetch(`https://dummyjson.com/products?limit=100`);
       const data = await res.json();
-      setProducts(data.products);
+      setProducts(data);
     } catch (err) {
       console.log("error while fetching data", err);
     } finally {

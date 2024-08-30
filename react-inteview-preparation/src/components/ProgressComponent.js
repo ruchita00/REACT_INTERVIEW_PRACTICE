@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const ProgressComponent = ({ interval, duration }) => {
   const [progress, setProgress] = useState(0);
+  
   useEffect(() => {
     const handler = setInterval(() => {
       setProgress((prevProgress) => {
